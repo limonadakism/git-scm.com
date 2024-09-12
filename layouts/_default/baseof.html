@@ -74,8 +74,8 @@
     <div id="content-wrapper">
       <div class="inner">
         {{ partial "site-root.html" . }}
+        {{ partial "footer.html" . }}
       </div> <!-- .inner -->
-      {{ partial "footer.html" . }}
     </div> <!-- #content-wrapper -->
   {{ else if (isset .Params "book") }}
     {{ .Scratch.Set "book" (index .Site.Data.book .Params.book.language_code) }}
