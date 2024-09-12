@@ -30,7 +30,13 @@ It is highly recommended to clone this repository using [`scalar`](https://git-s
   - external/docs/
   You will want to avoid editing these directly, as they contain pages that are pre-rendered via GitHub workflows, sourcing content from other repositories.
 
-To render the site locally, you'll need the extended version of [Hugo](https://gohugo.io/). On Windows, we recommend using the Windows Subsystem for Linux (WSL). You can serve the site locally via
+To render the site locally, you'll need [Hugo](https://gohugo.io/)'s **extended** version that is v0.128.0 or above. On Windows, we recommend using the Windows Subsystem for Linux (WSL).
+You can verify the version:
+
+    $ hugo version
+    hugo v0.128.0+extended linux/amd64 BuildDate=unknown
+
+You can serve the site locally via:
 
     $ hugo serve -w
 
