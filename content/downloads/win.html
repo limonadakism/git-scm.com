@@ -19,11 +19,10 @@ aliases:
       if (relRelDate) {
         const daysAgo = Math.floor((Date.now() - Date.parse("{{< site-param windows_installer.installer64.release_date >}}")) / 86400000)
         if (daysAgo >= 0) {
-          let ago = "" + daysAgo + " days ago"
+          const rest = (count) => `${count} ${unit}${unit > 1 ? "s" : ""} ago`
+          let ago = rest(daysAgo, "day")
 
           const handwave = (exact, unit) => {
-            const rest = (count) => `${count} ${unit}${unit > 1 ? "s" : ""} ago`
-
             const roundedDown = Math.floor(exact)
             const fract = exact - roundedDown
             if (fract < 0.25) return "about " + rest(roundedDown)
