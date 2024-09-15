@@ -370,6 +370,10 @@ var Search = {
         termSaturation: 2, // look for pages with more matches
         termSimilarity: 9, // prefer exact matches
       },
+      processResult: function (result) {
+        result.url = result.url.replace(/\.html$/, "")
+	return result
+      },
     });
 
     const searchTerm = this.getQueryValue('search');
