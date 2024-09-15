@@ -360,9 +360,10 @@ var Search = {
 
     const language = this.getQueryValue('language');
 
-    new PagefindUI({
+    const ui = new PagefindUI({
       element: "#search-div",
       showSubResults: true,
+      showImages: false,
       language,
       ranking: {
         pageLength: 0.1, // boost longer pages
@@ -378,8 +379,8 @@ var Search = {
 
     const searchTerm = this.getQueryValue('search');
     if (searchTerm) {
-      // TODO: figure out how to use `trigger()` instead of `[0].dispatchEvent()`
-      $("#search-div input").val(searchTerm)[0].dispatchEvent(new Event("input"))
+      $("#search-div input").val(searchTerm)
+      ui.triggerSearch(searchTerm);
     }
   }
 }
