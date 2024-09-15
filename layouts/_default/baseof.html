@@ -117,7 +117,7 @@
 
           <!-- older manual page versions are less interesting and need to be excluded from the search -->
           {{ $include_in_search := (or (not (isset .Params "docname")) (isset .Params "latest-changes") (isset .Params "lang")) }}
-          <div id="main"{{ if $include_in_search }} data-pagefind-filter="category:{{ $section }}" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body{{ end }}>
+          <div id="main"{{ if $include_in_search }} data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body{{ end }}>
             {{ .Content }}
             {{ $match := findRESubmatch "(?s)>NAME</h2>.*?<p[^>]*>(git-)?([^ ]+)" .Content 1 }}
             {{ if (eq ($match | len) 1) }}
